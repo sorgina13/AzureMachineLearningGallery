@@ -1,0 +1,51 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: microsoft.com.azureml.samples.hello_world_with_conda_file
+version: 0.0.1
+display_name: Hello World with Conda File
+type: CommandComponent
+description: A hello world tutorial to create a module for ml.azure.com.
+tags:
+  DataTransformation:
+inputs:
+  input_path:
+    type: path
+    description: The directory contains dataframe.
+    optional: false
+  string_parameter:
+    type: String
+    description: A parameter accepts a string value.
+    optional: true
+  int_parameter:
+    type: Integer
+    description: A parameter accepts an int value.
+    min: 1
+    max: 5
+    default: 3
+    optional: false
+  boolean_parameter:
+    type: Boolean
+    description: A parameter accepts a boolean value.
+    optional: false
+  enum_parameter:
+    type: Enum
+    enum:
+    - option1
+    - option2
+    - option3
+    default: option1
+    optional: false
+outputs:
+  output_path:
+    type: path
+    description: The directory contains a dataframe.
+command: >-
+  python hello_world.py --input-path {inputs.input_path} [--string-parameter {inputs.string_parameter}]
+  --int-parameter {inputs.int_parameter} --boolean-parameter {inputs.boolean_parameter}
+  --enum-parameter {inputs.enum_parameter} --output-path {outputs.output_path}
+environment:
+  conda:
+    conda_dependencies_file: conda.yaml
+  os: Linux
