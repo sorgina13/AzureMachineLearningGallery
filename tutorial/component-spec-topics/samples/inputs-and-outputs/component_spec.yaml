@@ -10,10 +10,10 @@ description: A sample module to use optional inputs.
 tags: {}
 inputs:
   input_path:
-    type: path
+    type: AnyDirectory
     optional: false
   optional_input_path:
-    type: path
+    type: AnyDirectory
     optional: true
   string_parameter:
     type: String
@@ -37,7 +37,7 @@ inputs:
     optional: true
 outputs:
   output_path:
-    type: path
+    type: AnyDirectory
     description: The directory contains a dataframe.
 command: >-
   python optional_input.py --input-path {inputs.input_path} [--optional-input-path
