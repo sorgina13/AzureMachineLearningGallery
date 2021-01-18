@@ -1,0 +1,56 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: microsoft.com.azureml.samples.sample_module_with_optional_inputs
+version: 0.0.1
+display_name: Sample Module with Optional Inputs
+type: CommandComponent
+description: A sample module to use optional inputs.
+tags: {}
+inputs:
+  input_path:
+    type: path
+    optional: false
+  optional_input_path:
+    type: path
+    optional: true
+  string_parameter:
+    type: String
+    description: A parameter accepts a string value.
+    default: string value
+    optional: false
+  optional_string_parameter:
+    type: String
+    description: A optional parameter accepts a string value.
+    optional: true
+  int_parameter:
+    type: Integer
+    description: A parameter accepts an int value.
+    min: 1
+    max: 5
+    default: 3
+    optional: false
+  optional_int_parameter:
+    type: Integer
+    description: A optional parameter accepts an int value.
+    optional: true
+outputs:
+  output_path:
+    type: path
+    description: The directory contains a dataframe.
+command: >-
+  python optional_input.py --input-path {inputs.input_path} [--optional-input-path
+  {inputs.optional_input_path}] --string-param {inputs.string_parameter} [--optional-string-param
+  {inputs.optional_string_parameter}] --int-parameter {inputs.int_parameter} [--optional-int-parameter
+  {inputs.optional_int_parameter}] --output-path {outputs.output_path}
+environment:
+  conda:
+    conda_dependencies:
+      dependencies:
+      - python=3.6.8
+      - pip=20.0
+      - pip:
+        - azureml-defaults
+        - azureml-dataprep>=1.6
+  os: Linux

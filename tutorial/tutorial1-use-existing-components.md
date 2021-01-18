@@ -31,11 +31,7 @@ This tutorial will explain how to register component from the gallery with a sam
 
     ![create-component](./img/aml-studio-flight.png)
     
-1. Click *Create -> From YAML file*. Choose Github repo as source. Fill in the URL of cleanse component YAML spec file (https://github.com/Azure/AzureMachineLearningGallery/blob/main/components/automobile-price-prediction/xgboost-regressor-training/XGBRegressorTraining.spec.yaml).
-
-    > **! NOTE:**  
-    >
-    > If you have created components in your workspace before, click *New Module -> From YAML file* to create a new component.
+1. Click *New Module -> From YAML file*. Choose Github repo as source. Fill in the URL of cleanse component YAML spec file (https://github.com/Azure/AzureMachineLearningGallery/blob/main/components/automobile-price-prediction/xgboost-regressor-training/XGBRegressorTraining.spec.yaml).
 
     ![create-component](./img/create-component.png)
     
