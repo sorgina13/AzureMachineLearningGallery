@@ -65,4 +65,4 @@ python optional_input.py --input-path /aaa/bbb --string-param abc
 
 ## Sample component
 
-[A component with optional inputs and parameters](./samples/inputs-and-outputs/README.md)
+[A component with optional inputs and parameters](./samples/inputs-and-outputs)
