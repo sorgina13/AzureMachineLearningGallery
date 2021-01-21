@@ -12,7 +12,7 @@ Build pipeline with newly created components and AzureML built-in components.
 
 ## Prerequisites
 
-- [Create related components in your workspace](.../tutorial/tutorial1-use-existing-components.md).
+- [Create related components in your workspace](../../tutorial/tutorial1-use-existing-components.md).
 
     | Component spec               | Description                                                  |
     | --- |--- |
