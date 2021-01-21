@@ -12,7 +12,13 @@ Build pipeline with newly created components and AzureML built-in components.
 
 ## Prerequisites
 
-[Create related components in your workspace](.../tutorial/tutorial1-use-existing-components.md).
+- [Create related components in your workspace](.../tutorial/tutorial1-use-existing-components.md).
+
+    | Component spec               | Description                                                  |
+    | --- |--- |
+    | [textcnn-train](.../components/textcnn/textcnn-train/train.yaml) | A module to perform training of a text classicification model from scratch using pytorch |
+    | [textcnn-preprocess](.../components/textcnn/textcnn-preprocess/preprocess.yaml) | A module to preprocess input text before scoring. |
+    | [textcnn-score](.../components/textcnn/textcnn-score/score.yaml) | A module to score text classification model. |
 
 ## Build the pipeline
 
@@ -39,12 +45,6 @@ Build pipeline with newly created components and AzureML built-in components.
 
 1. After the pipeline run is completed, you can check the `Precision, Recall and F1-Score` and `precision-recall curve` under **Outputs+logs** tab in the right pane of **TextCNN Score Model**. 
 
-## Related components
-| Component spec               | Description                                                  |
-| --- |--- |
-| [textcnn-train](.../components/textcnn/textcnn-train/train.yaml) | A module to perform training of a text classicification model from scratch using pytorch |
-| [textcnn-preprocess](.../components/textcnn/textcnn-preprocess/preprocess.yaml) | A module to preprocess input text before scoring. |
-| [textcnn-score](.../components/textcnn/textcnn-score/score.yaml) | A module to score text classification model. |
 
 
 | Contributed by | Tags | Last update | 
