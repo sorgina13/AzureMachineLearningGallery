@@ -10,7 +10,11 @@ Build pipeline with newly created components and a manufacture sample dataset.
 
 ## Prerequisites
 
-[Create related components in your workspace](../../tutorial/tutorial1-use-existing-components.md). Component spec can be found [here](https://github.com/microsoft/anomalydetector/blob/master/aml_component/ad_component.yaml).
+- [Create related components in your workspace](../../tutorial/tutorial1-use-existing-components.md). Component spec can be found [here](https://github.com/microsoft/anomalydetector/blob/master/aml_component/ad_component.yaml).
+
+    | Component spec               | Description                                                  |
+    | --- |--- |
+    |[Spectral Residual Anomaly Detection](https://github.com/microsoft/anomalydetector/blob/master/aml_component/ad_component.yaml)| Detect anomlies based on spectral residual anomaly detection algorithm.|
 
 ## Build the pipeline
 
@@ -56,10 +60,6 @@ Build pipeline with newly created components and a manufacture sample dataset.
     * `lowerBoundary`. The lower boundary at each point that the algorithm can tolerant as not anomaly.
     * `upperBoundary`. The upper boundary at each point that the algorithm can tolerant as not anomaly.
 
-## Related components
-| Component spec               | Description                                                  |
-| --- |--- |
-[Spectral Residual Anomaly Detection](https://github.com/microsoft/anomalydetector/blob/master/aml_component/ad_component.yaml)| Detect anomlies based on spectral residual anomaly detection algorithm. |
 
 
 | Contributed by | Maintained by | Category | Tags | Last update | 

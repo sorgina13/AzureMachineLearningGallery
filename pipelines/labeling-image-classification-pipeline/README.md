@@ -12,7 +12,12 @@ Build pipeline with newly created components and some built-in components in the
 
 ## Prerequisites
 
-- [Create related components in your workspace](.../tutorial/tutorial1-use-existing-components.md).
+- [Create related components in your workspace](../../tutorial/tutorial1-use-existing-components.md).
+
+    | Component spec               | Description                                                  |
+    | --- |--- |
+    |[Convert Labeling Data to Image Directory](../../components/convert-labeling-data-to-image-directory/convert_labeling_data_to_image_directory.spec.yaml)| Convert AML labeling dataset to Image Directory which can be used in Designer. |
+
 - A registered dataset exported from AML Data Labeling.
 
 ## Build the pipeline
@@ -24,11 +29,6 @@ Build pipeline with newly created components and some built-in components in the
 1. Add built-in modules from the **Computer Vision** category and connect them like following:
 ![](./labeling-image-classification-pipeline.png)
 
-
-## Related components
-| Component spec               | Description                                                  |
-| --- |--- |
-|[Convert Labeling Data to Image Directory](.../components/convert-labeling-data-to-image-directory/convert_labeling_data_to_image_directory.spec)| Convert AML labeling dataset to Image Directory which can be used in Designer. 
 
 
 | Contributed by |  Tags | Last update | 
