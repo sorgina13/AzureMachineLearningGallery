@@ -3,7 +3,7 @@
 
 $schema: http://azureml/sdk-2-0/CommandComponent.json
 name: microsoft.com.azureml.samples.textcnn_score_model
-version: 0.0.3
+version: 0.0.19
 display_name: TextCNN Score Model
 type: CommandComponent
 description: Predict the classes through the trained TextCNN model
@@ -23,7 +23,7 @@ outputs:
     type: AnyDirectory
     description: Predict result
 command: >-
-  python run.py --trained-model {inputs.trained_model} --predict-path {inputs.predict_data}
+  python textcnn-score/run.py --trained-model {inputs.trained_model} --predict-path {inputs.predict_data}
   --predict-result-path {outputs.predict_result}
 environment:
   docker:
@@ -31,3 +31,4 @@ environment:
   conda:
     conda_dependencies_file: conda.yaml
   os: Linux
+code: ../

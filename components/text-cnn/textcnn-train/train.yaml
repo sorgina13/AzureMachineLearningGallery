@@ -3,7 +3,7 @@
 
 $schema: http://azureml/sdk-2-0/CommandComponent.json
 name: microsoft.com.azureml.samples.textcnn_train_model
-version: 0.0.17
+version: 0.0.4
 display_name: TextCNN Train Model
 type: CommandComponent
 description: Trains a TextCNN model in a supervised manner
@@ -73,7 +73,7 @@ outputs:
     type: AnyDirectory
     description: Vocab for predict the sentence
 command: >-
-  python run.py --embed-dim {inputs.word_embedding_dim} --kernel-num {inputs.kernel_num}
+  python textcnn-train/run.py --embed-dim {inputs.word_embedding_dim} --kernel-num {inputs.kernel_num}
   --dropout {inputs.dropout} --train-file {inputs.train_data_file} --test-file {inputs.validation_data_file}
   --label-column {inputs.label_column_name} --true-label-value {inputs.true_label_value}
   --text-column {inputs.text_column_name} --batch-size {inputs.batch_size} --l2 {inputs.l2_regularization_weight}
@@ -85,3 +85,4 @@ environment:
   conda:
     conda_dependencies_file: conda.yaml
   os: Linux
+code: ../
