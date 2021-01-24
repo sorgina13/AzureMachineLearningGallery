@@ -20,4 +20,16 @@ Please create Github issue to raise your questions if this document does not hel
 
     A potential cause is you do not set versions of packages in conda dependencies in your component spec. Pip with version >=20.3 will search among multiple versions for packages without versions set, and this will take a long time.
     
-    Recommendeded solution is either you set **pip=20.2** in your conda dependencies, or set versions of pip-installed packages.
+    Recommended solution is either you set **pip=20.2** in your conda dependencies, or set versions of pip-installed packages.
+
+1. **Is there a limitation in using Python packages?**
+
+    Theoretically no. You can use base image and conda.yaml to  define any dependencies for your component. You could refer to how to set [running environment](./tutorial/component-spec-topics/running-environment.md) in your component spec.
+
+1. **Can we use complex directories in the python code?**
+
+    Yes. Use [code](./tutorial/component-spec-topics/code-snapshot.md) in your component spec to refer to complex directories.
+
+1. **Do we support single python command or multiple commands in the yaml spec?**
+
+    Currently no. This is one feature in our roadmap.

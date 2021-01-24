@@ -3,7 +3,7 @@
 
 $schema: http://azureml/sdk-2-0/CommandComponent.json
 name: microsoft.com.azureml.samples.textcnn_word_to_id
-version: 0.0.8
+version: 0.0.9
 display_name: TextCNN Word to Id
 type: CommandComponent
 description: Transform Word to Id
@@ -27,9 +27,10 @@ outputs:
     type: AnyDirectory
     description: Processed data
 command: >-
-  python run.py --input-vocab {inputs.input_vocab} --input-data {inputs.input_text}
+  python textcnn-preprocess/run.py --input-vocab {inputs.input_vocab} --input-data {inputs.input_text}
   --text-column {inputs.text_column_name} --output-data {outputs.processed_data}
 environment:
   conda:
     conda_dependencies_file: conda.yaml
   os: Linux
+code: ../

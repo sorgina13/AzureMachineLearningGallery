@@ -1,0 +1,20 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: microsoft.com.azureml.samples.module_with_custom_source_directory
+version: 0.0.1
+display_name: Module with custom Source Directory
+type: CommandComponent
+description: A sample to demostrate modules with customized source directory
+tags:
+  Samples:
+inputs: {}
+outputs: {}
+command: >-
+  python component_entry/run.py
+environment:
+  conda:
+    conda_dependencies_file: component_entry/conda.yaml
+  os: Linux
+code: ../
