@@ -3,7 +3,7 @@ channels:
 - defaults
 dependencies:
 - python=3.7
-- pip = 20.2
+- pip=20.2
 - pip:
   - PyYAML
   - azureml-designer-core==0.0.54
