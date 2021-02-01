@@ -1,0 +1,79 @@
+#  This is a tutorial component spec yaml file for XGBRegressor.
+#  For more details, please refer to https://aka.ms/azure-ml-component-specs
+$schema: http://azureml/sdk-2-0/CommandComponent.json
+name: Forecast
+version: 0.0.36
+display_name: Forecast
+type: CommandComponent
+is_deterministic: false
+tags:
+  Tutorial:
+inputs:
+  Training_Data:
+    type: DataFrameDirectory
+    optional: false
+  Timeseries:
+    type: String
+    optional: false
+    description: The column with the time series.
+  Model_FileName:
+    type: String
+    optional: false
+    description: Name of the model file.
+  Forecast_qt:
+    type: String
+    optional: false
+    description: Forecast quantity
+  daily_seasonality:
+    type : boolean
+    optional: false
+    description: Forecast Seasonality
+  periods:
+    type: integer
+    optional: false
+    description: Periods to Forecast
+  freq:
+    type: String
+    optional: false
+    description: Frequency of Forecast
+  Add_Holidays:
+    type: String
+    optional: false
+    description: Add Holidays for country, i.e UK
+outputs:
+  Evaluation_Output:
+    type: AnyDirectory
+  Model_Path:
+    type: AnyDirectory
+command: >-
+  python Forecast.py --Training_Data {inputs.Training_Data} --Model_FileName {inputs.Model_FileName} 
+  --Timeseries {inputs.Timeseries} --Forecast_qt {inputs.Forecast_qt} --daily_seasonality {inputs.daily_seasonality} --periods {inputs.periods} --freq {inputs.freq} --Add_Holidays {inputs.Add_Holidays} --Model_FileName {inputs.Model_FileName}
+  --Model_Path {outputs.Model_Path} --Evaluation_Output {outputs.Evaluation_Output} 
+environment:
+  docker:
+    image: mcr.microsoft.com/azureml/intelmpi2018.3-ubuntu16.04
+  conda:
+    conda_dependencies:
+      name: project_environment
+      channels:
+      - anaconda
+      - conda-forge
+      dependencies:
+      - python=3.6
+      - pip=20.2
+      - pip:
+        - azureml-sdk==0.1.0.*
+        - azureml-designer-core==0.0.54
+        - azureml-dataset-runtime[fuse,pandas]
+        - --index-url https://azuremlsdktestpypi.azureedge.net/dev/aml/office/134157926D8F
+        - --extra-index-url https://pypi.org/simple
+        - pyarrow==1.0.1
+        - pandas==0.25.3
+        - scikit-learn==0.22.2.post1
+        - numpy==1.18.5
+        - fbprophet==0.5
+        - holidays==0.9.11
+        - psutil>=5.2.2,<6.0.0
+        - matplotlib==3.2.1
+        - plotly==4.14.3
+  os: Linux
