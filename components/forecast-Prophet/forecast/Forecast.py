@@ -12,7 +12,8 @@ from fbprophet import Prophet
 from fbprophet.plot import add_changepoints_to_plot
 from matplotlib import pyplot
 import pickle
-
+from azureml.core.run import Run
+import logging
 
 
 ## Parse args
@@ -58,10 +59,12 @@ os.makedirs(args.Model_Path, exist_ok=True)
 ##Create the Forecast plot
 fig = model.plot(forecast)
 a = add_changepoints_to_plot(fig.gca(), model, forecast)
+run.log_image("Forecast", plot=fig)
 pyplot.savefig(args.Model_Path + "/" +'forecast.png')
 
 ##Create the components plots
 fig2 = model.plot_components(forecast)
+run.log_image("Forecast Components", plot=fig2)
 pyplot.savefig(args.Model_Path + "/" +'components.png')
 
 ##Print prediction
