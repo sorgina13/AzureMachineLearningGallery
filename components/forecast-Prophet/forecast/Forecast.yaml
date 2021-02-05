@@ -35,11 +35,11 @@ inputs:
   freq:
     type: String
     optional: false
-    description: Frequency of Forecast
+    description: Frequency of Forecast: daily(d), monthly(m)
   Add_Holidays:
     type: String
     optional: false
-    description: Add Holidays for country, i.e UK
+    description: Add Holidays for country, i.e UK List of available countries https://github.com/dr-prodigy/python-holidays
 outputs:
   Evaluation_Output:
     type: AnyDirectory
