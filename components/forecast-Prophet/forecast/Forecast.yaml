@@ -1,4 +1,4 @@
-#  This is a tutorial component spec yaml file for XGBRegressor.
+#  This is a tutorial component spec yaml file for Prophet Forecast.
 #  For more details, please refer to https://aka.ms/azure-ml-component-specs
 $schema: http://azureml/sdk-2-0/CommandComponent.json
 name: Forecast
